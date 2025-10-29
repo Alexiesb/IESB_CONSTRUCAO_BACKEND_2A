@@ -1,0 +1,107 @@
+{
+    "info": {
+      "name": "CRUD Livros",
+      "_postman_id": "e1f3a2c4-1234-5678-9101-abcdef123456",
+      "description": "Collection para testar a API CRUD de livros",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Criar livro",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"titulo\": \"Clean Code\",\n  \"autor\": \"Robert C. Martin\",\n  \"editora\": \"Prentice Hall\",\n  \"ano\": 2008,\n  \"preco\": 99.9\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/livros",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["livros"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Listar todos os livros",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:3000/livros",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["livros"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Buscar livro por ID",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:3000/livros/{{id}}",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["livros", "{{id}}"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Atualizar livro por ID",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"preco\": 120.0\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/livros/{{id}}",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["livros", "{{id}}"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Remover livro por ID",
+        "request": {
+          "method": "DELETE",
+          "url": {
+            "raw": "http://localhost:3000/livros/{{id}}",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["livros", "{{id}}"]
+          }
+        },
+        "response": []
+      }
+    ],
+    "variable": [
+      {
+        "key": "id",
+        "value": "COLE_AQUI_O_ID_DO_LIVRO"
+      }
+    ]
+  }
+  
