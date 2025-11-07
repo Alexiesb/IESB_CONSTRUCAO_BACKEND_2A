@@ -1,0 +1,124 @@
+{
+    "info": {
+      "name": "API Empresas",
+      "_postman_id": "b8e2f53a-fb45-4a3e-aee9-8b129b99a09a",
+      "description": "Coleção para testar a API de gerenciamento de empresas, cargos, funcionários, projetos e tarefas.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Departamentos",
+        "item": [
+          {
+            "name": "Criar Departamento",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"nome\": \"Recursos Humanos\",\n    \"descricao\": \"Departamento responsável pela gestão de pessoas.\"\n}"
+              },
+              "url": { "raw": "http://localhost:3000/departamentos", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["departamentos"] }
+            }
+          },
+          {
+            "name": "Listar Departamentos",
+            "request": { "method": "GET", "url": "http://localhost:3000/departamentos" }
+          },
+          {
+            "name": "Buscar Departamento por ID",
+            "request": { "method": "GET", "url": "http://localhost:3000/departamentos/:id" }
+          },
+          {
+            "name": "Atualizar Departamento",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"descricao\": \"Departamento atualizado\"\n}"
+              },
+              "url": "http://localhost:3000/departamentos/:id"
+            }
+          },
+          {
+            "name": "Excluir Departamento",
+            "request": { "method": "DELETE", "url": "http://localhost:3000/departamentos/:id" }
+          }
+        ]
+      },
+      {
+        "name": "Cargos",
+        "item": [
+          {
+            "name": "Criar Cargo",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"nome\": \"Analista de RH\",\n    \"descricao\": \"Responsável por recrutamento e seleção.\",\n    \"salario\": 2500\n}"
+              },
+              "url": "http://localhost:3000/cargos"
+            }
+          },
+          { "name": "Listar Cargos", "request": { "method": "GET", "url": "http://localhost:3000/cargos" } }
+        ]
+      },
+      {
+        "name": "Funcionários",
+        "item": [
+          {
+            "name": "Criar Funcionário",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"nome\": \"Maria Souza\",\n    \"cpf\": \"12345678900\",\n    \"email\": \"maria@empresa.com\",\n    \"telefone\": \"61988887777\",\n    \"data_contratacao\": \"2024-05-10\",\n    \"data_nascimento\": \"1998-03-25\",\n    \"genero\": \"Feminino\",\n    \"endereco\": {\n        \"cep\": \"70000000\",\n        \"logradouro\": \"Rua das Flores\",\n        \"numero\": \"100\",\n        \"bairro\": \"Centro\",\n        \"cidade\": \"Brasília\",\n        \"uf\": \"DF\"\n    },\n    \"cargo\": \"<ID_DO_CARGO>\",\n    \"departamento\": \"<ID_DO_DEPARTAMENTO>\"\n}"
+              },
+              "url": "http://localhost:3000/funcionarios"
+            }
+          },
+          { "name": "Listar Funcionários", "request": { "method": "GET", "url": "http://localhost:3000/funcionarios" } }
+        ]
+      },
+      {
+        "name": "Projetos",
+        "item": [
+          {
+            "name": "Criar Projeto",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"nome\": \"Sistema de Gestão RH\",\n    \"descricao\": \"Criação de um sistema interno de gestão de pessoas.\",\n    \"data_inicio\": \"2024-06-01\",\n    \"data_fim\": \"2024-12-31\"\n}"
+              },
+              "url": "http://localhost:3000/projetos"
+            }
+          },
+          { "name": "Listar Projetos", "request": { "method": "GET", "url": "http://localhost:3000/projetos" } }
+        ]
+      },
+      {
+        "name": "Tarefas",
+        "item": [
+          {
+            "name": "Criar Tarefa",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"titulo\": \"Configurar Banco de Dados\",\n    \"descricao\": \"Criar e conectar o banco MongoDB Atlas.\",\n    \"data_inicio\": \"2024-06-10\",\n    \"data_fim\": \"2024-06-20\",\n    \"responsavel\": \"<ID_DO_FUNCIONARIO>\",\n    \"projeto\": \"<ID_DO_PROJETO>\"\n}"
+              },
+              "url": "http://localhost:3000/tarefas"
+            }
+          },
+          { "name": "Listar Tarefas", "request": { "method": "GET", "url": "http://localhost:3000/tarefas" } }
+        ]
+      }
+    ]
+  }
+  
